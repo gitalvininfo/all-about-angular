@@ -1,20 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Angular Routing</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Angular Deferrable Views</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a routerLink="/public" routerLinkActive="active" class="nav-link" href="#">Public</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/private" routerLinkActive="active" class="nav-link" href="#">Private</a>
-        </li>
       </ul>
     </div>
   </div>
 </nav>
+<main>
+  <div style="min-height: 2000px;"></div>
+  <button type="button" #showComments>Show all comments</button>
+  @defer (on viewport;) {
+  <article-comments />
+  } @placeholder (minimum 1s) {
+  <p>Placeholder for comments</p>
+  } @loading (minimum 1ms; after 1ms) {
+  <p>Loading comments...</p>
+  } @error {
+  <p>Failed to load comments</p>
+  }
 
-<router-outlet></router-outlet>
+</main>
