@@ -12,16 +12,12 @@
   </div>
 </nav>
 <main>
-  <div style="min-height: 2000px;"></div>
-  <button type="button" #showComments>Show all comments</button>
-  @defer (on viewport;) {
-  <article-comments />
-  } @placeholder (minimum 1s) {
-  <p>Placeholder for comments</p>
-  } @loading (minimum 1ms; after 1ms) {
-  <p>Loading comments...</p>
-  } @error {
-  <p>Failed to load comments</p>
-  }
+  <button class="btn btn-primary" type="button" (click)="testWritableSignal()">Writable Signal</button>
+  <button class="btn btn-primary" type="button" (click)="testSignalWDependencies()">Computed Signal Dependencies</button>
+  <button class="btn btn-primary" type="button" (click)="testUntrackedSignal()">Untracked Signal</button>
+
+  <h1>Writable Signal - {{writeTableSignal()}}</h1>
+  <h1>Computed Signal - {{computedSignalValue()}}</h1>
+  <h1>Untracked Signal - {{untrackedSignal()}}</h1>
 
 </main>
