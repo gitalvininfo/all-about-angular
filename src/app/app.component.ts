@@ -12,6 +12,11 @@ import { BannerComponent } from './banner/banner.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  // showMore = signal(false);
-  showMore = false;
+  showMore = signal(false);
+  // showMore = false;
+
+  
+  handler() {
+    console.log('hi there')
+  }
 }

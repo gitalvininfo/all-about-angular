@@ -10,8 +10,4 @@ import { Component, model, SimpleChanges } from '@angular/core';
 export class BannerComponent {
   expand = model.required<boolean>();
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('expand: ', this.expand())
-    console.log(changes)
-  }
 }

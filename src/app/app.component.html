@@ -13,13 +13,13 @@
 </nav>
 <main>
   <div class="header">
-    <button class="toggle-button" (click)="showMore = !showMore">
-    <!-- <button class="toggle-button" (click)="showMore.set(!showMore())"> -->
-      <!-- {{ showMore() ? 'Collapse' : 'Expand' }} Banner -->
-      {{ showMore ? 'Collapse' : 'Expand' }} Banner
+    <!-- <button class="toggle-button" (click)="showMore = !showMore"> -->
+    <button class="toggle-button" (click)="showMore.set(!showMore())">
+      {{ showMore() ? 'Collapse' : 'Expand' }} Banner
+      <!-- {{ showMore ? 'Collapse' : 'Expand' }} Banner -->
     </button>
   </div>
 
-  <app-banner [(expand)]="showMore" />
+  <app-banner [(expand)]="showMore" (expandChange)="handler()"/>
 
 </main>
