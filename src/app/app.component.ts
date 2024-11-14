@@ -2,21 +2,24 @@ import {
   Component,
   signal,
 } from '@angular/core';
-import { BannerComponent } from './banner/banner.component';
+import { ChildComponentComponent } from './child-component/child-component.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [BannerComponent],
+  imports: [ChildComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  showMore = signal(false);
-  // showMore = false;
-
+  firstName = signal<string>("");
+  lastName = signal<string>("");
   
-  handler() {
-    console.log('hi there')
+  setName(): void {
+    this.firstName.set("Alvin");
+  }
+
+  setLastName(): void {
+    this.lastName.set("Yanson");
   }
 }

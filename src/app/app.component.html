@@ -13,13 +13,9 @@
 </nav>
 <main>
   <div class="header">
-    <!-- <button class="toggle-button" (click)="showMore = !showMore"> -->
-    <button class="toggle-button" (click)="showMore.set(!showMore())">
-      {{ showMore() ? 'Collapse' : 'Expand' }} Banner
-      <!-- {{ showMore ? 'Collapse' : 'Expand' }} Banner -->
-    </button>
-  </div>
+    <app-child-component [firstName]="firstName()" [lastName]="lastName()"></app-child-component>
 
-  <app-banner [(expand)]="showMore" (expandChange)="handler()"/>
+    <button type="button" (click)="setName()">Set Name</button>
+  </div>
 
 </main>
