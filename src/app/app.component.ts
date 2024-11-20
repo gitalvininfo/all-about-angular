@@ -2,24 +2,29 @@ import {
   Component,
   signal,
 } from '@angular/core';
-import { ChildComponentComponent } from './child-component/child-component.component';
+import { UserSearchComponent } from './user-search/user-search.component';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MergeComponent } from './merge/merge.component';
+import { ConcatComponent } from './concat/concat.component';
+import { ZipComponent } from './zip/zip.component';
+import { CombineLatestComponent } from "./combine-latest/combine-latest.component";
+import { WithLatestFromComponent } from "./with-latest-from/with-latest-from.component";
+import { ForkJoinComponent } from "./fork-join/fork-join.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ChildComponentComponent],
+  imports: [UserSearchComponent, ReactiveFormsModule, MergeComponent, ConcatComponent, ZipComponent, CombineLatestComponent, WithLatestFromComponent, ForkJoinComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  firstName = signal<string>("");
-  lastName = signal<string>("");
+  operatorForm = new FormGroup({
+    operatorType: new FormControl(1, { nonNullable: true }),
+  });
   
-  setName(): void {
-    this.firstName.set("Alvin");
-  }
 
-  setLastName(): void {
-    this.lastName.set("Yanson");
+  ngOnInit() {
+    this.operatorForm.valueChanges.subscribe(type => console.log(type))
   }
 }

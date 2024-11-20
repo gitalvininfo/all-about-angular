@@ -1,0 +1,16 @@
+<h3>combine latest</h3>
+<p>Combines values from both observables, emitting a pair of values only when both observables emit.</p>
+<button type="button" (click)="startCombineLatest()" class="btn btn-dark" [disabled]="started">{{started ? 'Starting...' :
+    'Start'}}
+</button>
+
+<h5>Elapsed time {{timer$ | async}} seconds</h5>
+
+<hr />
+
+<ul class="list-group">
+    @for (log of logs; track log;) {
+    <li class="list-group-item"[innerHTML]="log">
+    </li>
+    }
+</ul>

@@ -1,0 +1,13 @@
+<h3>concat</h3>
+<p>Synchronous - One observable finishes (observable1) before the next one starts (observable2).</p>
+<button type="button" (click)="startConcat()" class="btn btn-dark" [disabled]="started">{{started ? 'Starting...' :
+    'Start'}}</button>
+
+<hr />
+
+<ul class="list-group">
+    @for (log of logs; track log;) {
+    <li class="list-group-item text-white" [ngClass]="log.includes('observable1') ? 'bg-success' : 'bg-danger'">{{log}}
+    </li>
+    }
+</ul>

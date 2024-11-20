@@ -1,0 +1,17 @@
+<h3>forkjoin</h3>
+<p>Waits for all source observables to complete. Emits the last emitted value from each observable as an array when all
+    are done.</p>
+<button type="button" (click)="startForkJoin()" class="btn btn-dark" [disabled]="started">{{started ? 'Starting...' :
+    'Start'}}
+</button>
+
+<h5>Elapsed time {{timer$ | async}} seconds</h5>
+
+<hr />
+
+<ul class="list-group">
+    @for (log of logs; track log;) {
+    <li class="list-group-item" [innerHTML]="log">
+    </li>
+    }
+</ul>

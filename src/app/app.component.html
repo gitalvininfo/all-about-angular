@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Angular Signal Model Views</a>
+    <a class="navbar-brand" href="#">Angular RXJS Operators</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,11 +11,48 @@
     </div>
   </div>
 </nav>
-<main>
-  <div class="header">
-    <app-child-component [firstName]="firstName()" [lastName]="lastName()"></app-child-component>
+<main class="p-4">
 
-    <button type="button" (click)="setName()">Set Name</button>
-  </div>
+  <form [formGroup]="operatorForm">
+    <div class="mb-3">
+      <label class="form-label">Operator Type</label>
+      <select class="form-select" formControlName="operatorType">
+        <option [value]="1">Merge</option>
+        <option [value]="2">Concat</option>
+        <option [value]="3">Zip</option>
+        <option [value]="4">Combine latest</option>
+        <option [value]="5">With latest from</option>
+        <option [value]="6">Fork join</option>
+        <option [value]="10">Combination</option>
+      </select>
+    </div>
+  </form>
+
+
+  @switch(+operatorForm.controls['operatorType'].value) {
+  @case (1) {
+  <app-merge />
+  }
+  @case (2) {
+  <app-concat />
+  }
+  @case (3) {
+  <app-zip />
+  }
+  @case (4) {
+  <app-combine-latest />
+  }
+  @case (5) {
+  <app-with-latest-from />
+  }
+  @case (6) {
+  <app-fork-join />
+  }
+  @case (10) {
+  <app-user-search />
+  }
+  }
+
+
 
 </main>

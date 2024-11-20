@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildComponentComponent } from './child-component.component';
+import { CombineLatestComponent } from './combine-latest.component';
 
-describe('ChildComponentComponent', () => {
-  let component: ChildComponentComponent;
-  let fixture: ComponentFixture<ChildComponentComponent>;
+describe('CombineLatestComponent', () => {
+  let component: CombineLatestComponent;
+  let fixture: ComponentFixture<CombineLatestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ChildComponentComponent]
+      imports: [CombineLatestComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChildComponentComponent);
+    fixture = TestBed.createComponent(CombineLatestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

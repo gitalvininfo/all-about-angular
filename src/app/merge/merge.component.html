@@ -1,0 +1,14 @@
+<h3>merge</h3>
+<p>Emits value every 5 seconds (observable1) and 10 seconds (observable2)</p>
+<button type="button" (click)="startMerge()" class="btn btn-dark" [disabled]="started">{{started ? 'Starting...' :
+    'Start'}}
+</button>
+
+<hr />
+
+<ul class="list-group">
+    @for (log of logs; track log;) {
+    <li class="list-group-item text-white" [ngClass]="log.includes('observable1') ? 'bg-success' : 'bg-danger'">{{log}}
+    </li>
+    }
+</ul>

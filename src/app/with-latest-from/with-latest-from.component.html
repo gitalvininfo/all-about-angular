@@ -1,0 +1,17 @@
+<h3>with latest from</h3>
+<p>Pairs the latest value from another observable (triggerObservable 10 secs) with each emission of the main observable (dataObservable 5 secs).</p>
+<button type="button" (click)="startWithLatestFrom()" class="btn btn-dark" [disabled]="started">{{started ?
+    'Starting...' :
+    'Start'}}
+</button>
+
+<h5>Elapsed time {{timer$ | async}} seconds</h5>
+
+<hr />
+
+<ul class="list-group">
+    @for (log of logs; track log;) {
+    <li class="list-group-item" [innerHTML]="log">
+    </li>
+    }
+</ul>
