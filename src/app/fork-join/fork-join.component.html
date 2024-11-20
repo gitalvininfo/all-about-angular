@@ -1,6 +1,14 @@
 <h3>forkjoin</h3>
 <p>Waits for all source observables to complete. Emits the last emitted value from each observable as an array when all
     are done.</p>
+
+<p>
+    <b>Use Case:</b> When you want to wait for all observables to complete and then process the final values together. All must
+    emit and complete. <br/>
+    <b>Example:</b> You need to fetch a user, their posts, and their comments, but you want to process everything once all are
+    finished.
+</p>
+
 <button type="button" (click)="startForkJoin()" class="btn btn-dark" [disabled]="started">{{started ? 'Starting...' :
     'Start'}}
 </button>

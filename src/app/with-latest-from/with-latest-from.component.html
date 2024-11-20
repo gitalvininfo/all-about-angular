@@ -1,5 +1,13 @@
 <h3>with latest from</h3>
-<p>Pairs the latest value from another observable (triggerObservable 10 secs) with each emission of the main observable (dataObservable 5 secs).</p>
+<p>Pairs the latest value from another observable (triggerObservable 10 secs) with each emission of the main observable
+    (dataObservable 5 secs). ⚠️ <b>Watch every 5 secs.</b></p>
+
+<p>
+    <b>Use Case:</b> When you have a “trigger” observable (like a button click), and you want to combine it with the latest
+    value from another observable (but only when the trigger emits). <br/>
+    <b>Example:</b> Clicking a button to submit a form and you want to get the latest form values at that moment.
+</p>
+
 <button type="button" (click)="startWithLatestFrom()" class="btn btn-dark" [disabled]="started">{{started ?
     'Starting...' :
     'Start'}}

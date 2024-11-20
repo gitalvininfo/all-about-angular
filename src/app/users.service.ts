@@ -10,6 +10,21 @@ export interface User {
   name: string;
 }
 
+export interface Todos {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+export interface Comments {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +35,18 @@ export class UsersService {
   findUsers({ userName = '', resultLimit = 5 }: SearchConfig) {
     return this.httpClient.get<User[]>(
       `https://jsonplaceholder.typicode.com/users?name_like=^${userName}&_limit=${resultLimit}`
+    );
+  }
+
+  getTodos() {
+    return this.httpClient.get<Todos[]>(
+      `https://jsonplaceholder.typicode.com/todos`
+    );
+  }
+
+  getComments() {
+    return this.httpClient.get<Comments[]>(
+      `https://jsonplaceholder.typicode.com/comments`
     );
   }
 }

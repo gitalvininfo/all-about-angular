@@ -1,5 +1,15 @@
 <h3>concat</h3>
 <p>Synchronous - One observable finishes (observable1) before the next one starts (observable2).</p>
+
+<p>
+    <b>Use Case:</b> When you need to handle two or more observables sequentially, one after the other, and you want to
+    wait
+    for the previous one to complete before starting the next. <br />
+    <b>Example:</b> First fetch user data, then fetch their posts. You want to finish loading the user before loading
+    the
+    posts.
+</p>
+
 <button type="button" (click)="startConcat()" class="btn btn-dark" [disabled]="started">{{started ? 'Starting...' :
     'Start'}}</button>
 

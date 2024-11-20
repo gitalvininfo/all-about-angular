@@ -17,7 +17,10 @@ export class CombineLatestComponent {
   timer$!: Observable<number>;
 
   startCombineLatest(): void {
-    this.timer$ = interval(1000).pipe(takeUntilDestroyed(this.destroyRef));
+    this.timer$ = interval(1000).pipe(
+      map(value => value + 1),
+      takeUntilDestroyed(this.destroyRef)
+    );
     
     this.started = true;
 

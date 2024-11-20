@@ -1,14 +1,26 @@
 <h3>merge</h3>
-<p>Emits value every 5 seconds (observable1) and 10 seconds (observable2)</p>
+<p>Emits value every 5 seconds (observable1) and 10 seconds (observable2). ⚠️ <b>Watch every 5 secs. </b> </p>
+
+<p>
+    <b>Use Case:</b> When you have multiple independent sources of data, and you want to get values from both, as soon
+    as
+    either emits. The order doesn't matter. <br />
+    <b>Example:</b> Imagine fetching user details and posts from an API. You don't care in which order they arrive, just
+    that
+    you want both together as soon as they're ready.
+</p>
+
 <button type="button" (click)="startMerge()" class="btn btn-dark" [disabled]="started">{{started ? 'Starting...' :
     'Start'}}
 </button>
+
+<h5>Elapsed time {{timer$ | async}} seconds</h5>
 
 <hr />
 
 <ul class="list-group">
     @for (log of logs; track log;) {
-    <li class="list-group-item text-white" [ngClass]="log.includes('observable1') ? 'bg-success' : 'bg-danger'">{{log}}
+    <li class="list-group-item text-white" [ngClass]="log?.includes('observable1') ? 'bg-success' : 'bg-danger'">{{log}}
     </li>
     }
 </ul>
