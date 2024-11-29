@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MergeComponent } from './merge.component';
+import { ExhaustMapComponent } from './exhaust-map.component';
 
-describe('MergeComponent', () => {
-  let component: MergeComponent;
-  let fixture: ComponentFixture<MergeComponent>;
+describe('ExhaustMapComponent', () => {
+  let component: ExhaustMapComponent;
+  let fixture: ComponentFixture<ExhaustMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MergeComponent]
+      imports: [ExhaustMapComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MergeComponent);
+    fixture = TestBed.createComponent(ExhaustMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

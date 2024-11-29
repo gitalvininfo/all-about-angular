@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CombineLatestComponent } from './combine-latest.component';
+import { MergeMapComponent } from './merge-map.component';
 
-describe('CombineLatestComponent', () => {
-  let component: CombineLatestComponent;
-  let fixture: ComponentFixture<CombineLatestComponent>;
+describe('MergeMapComponent', () => {
+  let component: MergeMapComponent;
+  let fixture: ComponentFixture<MergeMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CombineLatestComponent]
+      imports: [MergeMapComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CombineLatestComponent);
+    fixture = TestBed.createComponent(MergeMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

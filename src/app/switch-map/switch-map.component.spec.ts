@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConcatComponent } from './concat.component';
+import { SwitchMapComponent } from './switch-map.component';
 
-describe('ConcatComponent', () => {
-  let component: ConcatComponent;
-  let fixture: ComponentFixture<ConcatComponent>;
+describe('SwitchMapComponent', () => {
+  let component: SwitchMapComponent;
+  let fixture: ComponentFixture<SwitchMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConcatComponent]
+      imports: [SwitchMapComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ConcatComponent);
+    fixture = TestBed.createComponent(SwitchMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,27 @@
+<div class="alert alert-primary" role="alert">
+    <h6 class="mb-0">
+        in case we need cancellation logic, switchMap is the way to go
+    </h6>
+</div>
+
+<form>
+    <div class="mb-3">
+        <label class="form-label">Search here...</label>
+        <input #searchInput autocomplete="off" type="text" class="form-control">
+    </div>
+</form>
+
+
+<table class="table table-striped" *ngIf="(users$ | async) as usersList">
+
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+    </thead>
+
+    <tr *ngFor="let user of usersList">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+    </tr>
+
+</table>

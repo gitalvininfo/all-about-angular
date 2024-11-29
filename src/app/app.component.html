@@ -17,42 +17,28 @@
     <div class="mb-3">
       <label class="form-label">Operator Type</label>
       <select class="form-select" formControlName="operatorType">
-        <option [value]="1">Merge</option>
-        <option [value]="2">Concat</option>
-        <option [value]="3">Zip</option>
-        <option [value]="4">Combine latest</option>
-        <option [value]="5">With latest from</option>
-        <option [value]="6">Fork join</option>
-        <option [value]="10">Combination</option>
+        <option [value]="1">Switch Map</option>
+        <option [value]="2">Merge Map</option>
+        <option [value]="3">Concat Map</option>
+        <option [value]="4">Exhaust Map</option>
       </select>
     </div>
   </form>
 
 
-  @switch(+operatorForm.controls['operatorType'].value) {
-  @case (1) {
-  <app-merge />
+  @switch (+operatorForm.controls['operatorType'].value) {
+    @case (1) {
+      <app-switch-map/>
+    }
+    @case (2) {
+      <app-merge-map/>
+    }
+    @case (3) {
+      <app-concat-map/>
+    }
+    @case (4) {
+      <app-exhaust-map/>
+    }
   }
-  @case (2) {
-  <app-concat />
-  }
-  @case (3) {
-  <app-zip />
-  }
-  @case (4) {
-  <app-combine-latest />
-  }
-  @case (5) {
-  <app-with-latest-from />
-  }
-  @case (6) {
-  <app-fork-join />
-  }
-  @case (10) {
-  <app-user-search />
-  }
-  }
-
-
 
 </main>

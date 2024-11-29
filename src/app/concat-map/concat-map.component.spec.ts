@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ZipComponent } from './zip.component';
+import { ConcatMapComponent } from './concat-map.component';
 
-describe('ZipComponent', () => {
-  let component: ZipComponent;
-  let fixture: ComponentFixture<ZipComponent>;
+describe('ConcatMapComponent', () => {
+  let component: ConcatMapComponent;
+  let fixture: ComponentFixture<ConcatMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ZipComponent]
+      imports: [ConcatMapComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ZipComponent);
+    fixture = TestBed.createComponent(ConcatMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
