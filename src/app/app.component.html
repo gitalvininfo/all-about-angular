@@ -12,10 +12,33 @@
   </div>
 </nav>
 <main>
-  @for (item of comments; track item.id) {
-  <div>
-    {{item.body}}
-  </div>
+  <form [formGroup]="operatorForm">
+    <div class="mb-3">
+      <label class="form-label">Types Provider</label>
+      <select class="form-select" formControlName="operatorType">
+        <option [value]="1">Class</option>
+        <option [value]="2">Value</option>
+        <option [value]="3">Factory</option>
+        <option [value]="4">Aliased</option>
+      </select>
+    </div>
+  </form>
+
+
+  @switch (+operatorForm.controls['operatorType'].value) {
+  @case (1) {
+  <app-use-class />
   }
+  @case (2) {
+  <app-use-value />
+  }
+  @case (3) {
+  <app-use-factory />
+  }
+  @case (4) {
+  <app-use-existing />
+  }
+  }
+
 
 </main>

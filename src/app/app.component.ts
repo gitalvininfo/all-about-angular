@@ -1,29 +1,20 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject
-} from '@angular/core';
-import { Comments, UserService } from './user.service';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { UseClassComponent } from './use-class/use-class.component';
+import { UseValueComponent } from './use-value/use-value.component';
+import { UseFactoryComponent } from "./use-factory/use-factory.component";
+import { UseExistingComponent } from './use-existing/use-existing.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ReactiveFormsModule, UseClassComponent, UseValueComponent, UseFactoryComponent, UseExistingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  comments: Comments[] = [];
-  userService = inject(UserService);
-  
-  constructor() {}
 
-  ngOnInit(): void {
-    this.userService.getComments().subscribe(data => {
-      console.log(data);
-      this.comments = data;
-    })
-  }
+  operatorForm = new FormGroup({
+    operatorType: new FormControl(1, { nonNullable: true }),
+  });
 }
